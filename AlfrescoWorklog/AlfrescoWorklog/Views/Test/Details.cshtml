@@ -1,0 +1,55 @@
+﻿@model AlfrescoWorklog.Models.Project
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Project</legend>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">startTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.startTime)
+    </div>
+
+    <div class="display-label">endTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endTime)
+    </div>
+
+    <div class="display-label">windowsLogon</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.windowsLogon)
+    </div>
+
+    <div class="display-label">User</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.name)
+    </div>
+
+    <div class="display-label">Sandpit</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sandpit.name)
+    </div>
+
+    <div class="display-label">isDeployed</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.isDeployed)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

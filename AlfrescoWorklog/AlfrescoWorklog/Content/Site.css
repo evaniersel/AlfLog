@@ -1,0 +1,218 @@
+/*Header Styles*/
+h1{}
+h2{font-size:2em; margin: 2% 0 2% 0;}
+h3{}
+
+/*Layout*/
+.container{width:90%; margin:auto; margin-top:20px; margin-bottom:60px;}
+.label {margin: 2% 0 2% 0;}
+.input input, textarea, select{width:90%;}
+.body-container{clear:both;margin: 5%;}
+.alfreslow{position:relative; float:left; width:250px;}
+
+/*Nav Styling*/
+nav{width:100%; height: 50px; clear:both; border-bottom:1px solid #c0c0c0;}
+nav ul{margin: 0 5% 0 0;}
+nav li{ display:block; width:33%; float:left; text-align:center;  }
+nav a:link{text-decoration:none; color:#000;  display:block; font-family:Sans-Serif; font-weight:bolder; font-size:1.25em; padding:2% 0 0 0; line-height:1.8; }
+nav a:visited{text-decoration:none; color:#000;  display:block; font-family:Sans-Serif; font-weight:bolder; font-size:1.25em; padding:2% 0 0 0; line-height:1.8; }
+nav a:hover{text-decoration:none; color:#304345;  display:block; font-family:Sans-Serif; font-weight:bolder; font-size:1.5em; padding:2% 0 0 0; line-height:1.8; }
+
+/*Header Styling*/
+header{height:75px;}
+
+
+/*Conflict Table Styles*/
+#conflict-results tr:first-child th{background:#8A0808; color:#FFF; text-align:center;}
+
+/*General Styling*/
+.content-container{border:1px solid #c0c0c0; background:#FAF9FA;}
+.user-details{float:right; position:relative;}
+
+/*Create Project Styling*/
+.error{margin:10px 0 0 0; color:Red; font-weight:bold;}
+.label{font-weight:bold; font-size:14px;}
+
+
+/*DataTable Styling*/
+/*
+ * Colour dictionary:
+ *
+ * Table control elements:   #719ba7
+ * Header cells:             #66A9BD
+ * Body header cells:        #91c5d4
+ * Body content cells:       #d5eaf0
+ * Body content cells (alt): #bcd9e1
+ * Footer header:            #b0cc7f
+ * Footer content:           #d7e1c5
+ */
+
+/*
+ * Page setup styles
+ */
+body {
+	font: 80%/1.45em Arial, Verdana, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #111;
+	background-color: #fff;
+}
+
+#container {
+	margin: 0 auto;
+	width: 960px
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+
+/*
+ * DataTables framework
+ */
+div.dataTables_wrapper {
+	background-color: #FAF9FA;
+}
+
+div.dataTables_length {
+	float: left;
+}
+
+div.dataTables_filter {
+	float: right;
+}
+
+div.dataTables_info {
+	padding: 9px 6px 6px 6px;
+	float: left;
+}
+
+div.dataTables_paginate {
+	float: right;
+}
+
+div.dataTables_length,
+div.dataTables_filter,
+div.dataTables_paginate {
+	padding: 6px;
+}
+
+/* Self clearing - http://www.webtoolkit.info/css-clearfix.html */
+.dataTables_wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+html[xmlns] .dataTables_wrapper {
+	display: block;
+}
+ 
+* html .dataTables_wrapper {
+	height: 1%;
+}
+
+
+/*
+ * Table styles
+ */
+table.summary {
+	width: 100%;
+	clear: both;
+}
+
+table.summary td,
+table.summary th {
+	padding: 5px;
+	border: 1px solid #fff;
+}
+
+/* Header cells */
+table.summary thead th {
+	text-align: center;
+	background: #66a9bd;
+}
+
+/* Body cells */
+table.summary tbody th {
+	text-align: left;
+	background: #91c5d4;
+}
+	
+table.summary tbody td {
+	text-align: center;
+	background: #d5eaf0;
+}
+		
+table.summary tbody tr.odd td { 
+	background: #bcd9e1;
+}
+
+/* Footer cells */	
+table.summary tfoot th {
+	background: #b0cc7f;
+	text-align: left;
+}
+	
+table.summary tfoot td {
+	background: #d7e1c5;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+/*
+ * Pagination
+ */
+a.paginate_button,
+a.paginate_active {
+	display: inline-block;
+	background-color: #608995;
+	padding: 2px 6px;
+	margin-left: 2px;
+	cursor: pointer;
+	*cursor: hand;
+}
+
+a.paginate_active {
+	background-color: transparent;
+	border: 1px solid black;
+}
+
+a.paginate_button_disabled {
+	color: #3d6672;
+}
+.paging_full_numbers a:active {
+	outline: none
+}
+.paging_full_numbers a:hover {
+	text-decoration: none;
+}
+
+div.dataTables_paginate span>a {
+	width: 15px;
+	text-align: center;
+}
+
+
+/*
+ * Sorting
+ */
+table.summary thead th.sorting_asc {
+	background: #66A9BD url('../Assets/sort_asc.png') no-repeat right center;
+}
+
+table.summary thead th.sorting_desc {
+	background: #66A9BD url('../Assets/sort_desc.png') no-repeat right center;
+}
+
+table.summary thead th.sorting {
+	background: #66A9BD url('../Assets/sort_both.png') no-repeat right center;
+}

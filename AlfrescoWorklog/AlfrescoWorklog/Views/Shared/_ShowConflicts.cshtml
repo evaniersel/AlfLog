@@ -1,0 +1,52 @@
+﻿@using AlfrescoWorklog.HtmlHelpers;
+@model AlfrescoWorklog.Models.Project
+
+<div id="conflict-results">
+
+    <h2>Conflict Summary for project: @Model.name</h2>
+ 
+    <table class="summary">
+        <thead>
+
+
+            <tr>
+                <th>Name</th>
+                <th>Project Description</th>
+                <th>Alfresco Username</th>
+                <th>Windows Login</th>
+                <th>Sandpit</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Email User</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach (AlfrescoWorklog.Models.Project p in Model.ConflictingProjects)
+        {
+            <tr>
+                <td>@p.name</td>
+                <td>@p.description</td>
+                <td>@p.AlfrescoUser.name</td>
+                <td>@p.WindowsUsers</td>
+                <td>@p.Sandpit.name</td>
+                <td>@p.startTime</td>
+                    
+                @if (!p.isDeployed)
+                {
+                   <td>@Html.Raw(Html.ImageActionLink("../../Assets/finish.png", "Finish Project", "FinishProject", new { id = p.ID })) </td>
+                }
+                else
+                {
+                    <td>@p.endTime</td>
+                }
+
+                <td>
+                    <a href="mailto:@p.UserEmailAddresses"><img alt="mail" src="../../Assets/mail.png" /></a>
+                </td>
+            </tr>
+        }
+        </tbody>
+
+    </table>
+</div>

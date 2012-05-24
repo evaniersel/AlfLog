@@ -1,0 +1,44 @@
+﻿@using AlfrescoWorklog.Models; 
+@using AlfrescoWorklog.HtmlHelpers;
+@model ProjectViewModel
+           
+<div class="create-project">
+        <h2>Create Project</h2>
+        @using (Html.BeginForm("CreateProject", "Worklog"))
+        {
+            @Html.ValidationSummary(true)
+            <div class="label">
+            Project Name:
+            </div>
+            <div class="input">
+            @Html.EditorFor(model=>model.name)
+            </div>
+            <div class="error">@Html.ValidationMessageFor(model => model.name)</div>
+
+            <div class="label">
+            Project Description:
+            </div>
+            <div class="input">
+            @Html.TextAreaFor(model => model.description)
+            </div>
+            <div class="error">@Html.ValidationMessageFor(model => model.description)</div>
+
+            <div class="label">
+            Alfresco User:
+            </div>
+            <div class="input">
+            @Html.DropDownListFor(model => model.UserID, Model.Users)
+            </div>
+
+            <div class="label">
+            Alfresco Sandpit:
+            </div>
+            <div class="input">
+            @Html.DropDownListFor(model => model.SandpitID, Model.Sandpits)
+            </div>
+            <p>
+            <input type="submit"  value="Create New Project" />
+            </p>
+        }
+</div>
+

@@ -1,0 +1,47 @@
+﻿@model AlfrescoWorklog.Models.LogOnModel
+
+<div class="logon-container">
+    <h2>Log On</h2>
+
+    
+
+    @using (Html.BeginForm("LogOn","Account")) {
+        <div>
+            <fieldset>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.UserName)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(m => m.Password)
+                    
+                </div>
+                <div class="error">
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+
+                <div class="editor-label">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+
+                <p>
+                    <input type="submit" value="Log On" />
+                </p>
+
+                <div class="error">@Html.ValidationSummary(true)</div>
+                
+            </fieldset>
+        </div>
+    }
+</div>

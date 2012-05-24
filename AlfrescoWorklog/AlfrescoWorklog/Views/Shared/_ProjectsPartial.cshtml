@@ -1,0 +1,39 @@
+﻿@using AlfrescoWorklog.Models;
+@model ProjectViewModel
+
+           
+@*<table>
+    
+    @foreach (Project p in Model.InvalidProjects)
+    {
+        <tr>
+            <td>@p.name</td>
+            <td>@p.description</td>
+            <td>@p.User.name</td>
+            <td>@p.windowsLogon</td>
+            <td>@p.Sandpit.name</td>
+            <td>@p.startTime</td>
+            <td>@p.isDeployed</td>
+        </tr>
+    }
+
+</table>*@
+
+In progress
+<table>
+    
+    @foreach (Project p in Model.ProjectsInProgress)
+    {
+        <tr>
+            <td>@p.name</td>
+            <td>@p.description</td>
+            <td>@p.User.name</td>
+            <td>@p.windowsLogon</td>
+            <td>@p.Sandpit.name</td>
+            <td>@p.startTime</td>
+            <td>@Html.ActionLink("Deploy","DeployProject", new{id=p.ID})</td>
+        </tr>
+    }
+
+</table>
+

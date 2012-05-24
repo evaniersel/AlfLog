@@ -1,0 +1,46 @@
+﻿@using AlfrescoWorklog.Models;
+@model SandpitViewModel
+               
+
+@{
+    ViewBag.Title = "SandpitSummary";
+}
+
+<h2>Available Sandpits</h2>
+<table class="summary">
+        <tr>
+            <th>Sandpit</th>
+        </tr>
+
+        @foreach(Sandpit s in Model.AvailableSandpits)
+        {
+            <tr>
+                <td>@s.name</td>
+            </tr>
+        }
+</table>
+
+
+<h2>Unavailable Sandpits</h2>
+<table class="summary">
+        <tr>
+            <th>Sandpit</th>
+            <th>Alfresco User</th>
+            <th>Windows Login</th>
+            <th>Project Name</th>
+            <th>Email User</th>
+        </tr>
+
+        @foreach(Sandpit s in Model.SandpitsInUse)
+        {
+            <tr>
+                <td>@s.name</td>
+                <td>@s.LatestProject.AlfrescoUser.name</td>
+                <td>@s.LatestProject.WindowsUsers</td>
+                <td>@s.LatestProject.name</td>
+                <td>
+                    <a href="mailto:@s.LatestProject.UserEmailAddresses"><img alt="mail" src="../../Assets/mail.png" /></a>
+                </td>
+            </tr>
+        }
+</table>

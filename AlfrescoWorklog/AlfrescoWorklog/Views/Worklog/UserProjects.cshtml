@@ -1,0 +1,68 @@
+﻿@using AlfrescoWorklog.Models;
+@using AlfrescoWorklog.HtmlHelpers;
+@model IEnumerable<Project>
+@{
+    ViewBag.Title = "Project Summary";
+    
+}
+
+<h2>Project Summary for: @Membership.GetUser().UserName</h2>
+
+<div>
+    <table id="project-summary" class="summary">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Project Description</th>
+                <th>Alfresco Username</th>
+                <th>Sandpit</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Conflicts</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (Project p in Model)
+        {
+            <tr>
+                <td>@p.name</td>
+                <td>@p.description</td>
+                <td>@p.AlfrescoUser.name</td>
+                <td>@p.Sandpit.name</td>
+                <td>@p.startTime</td>
+                    
+                @if (!p.isDeployed)
+                {
+                    <td>@Html.Raw(Html.ImageActionLink("../../Assets/finish.png", "Finish Project", "FinishProject", new { id = p.ID }))</td>
+                }
+                else
+                {
+                    <td>@p.endTime</td>
+                }
+
+                <td>   
+                @if (p.IsConflicted)
+                {
+                    
+                    @Html.Raw(Ajax.ImageActionLink("../../Assets/error.png", "Conflict", "ShowConflicts", new { id = p.ID }, new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "results-container",
+                        HttpMethod = "GET"
+                    }))
+                    
+                } 
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div class="table-controls"></div>
+</div>
+
+<div id="results-container">
+</div>
+
+
