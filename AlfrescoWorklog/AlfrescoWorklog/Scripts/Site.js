@@ -2,7 +2,7 @@
 /// <reference path="jquery-1.7.2-vsdoc.js" />
 
 $(document).ready(function () {
-    $('#project-summary').dataTable({
+    $('.summary').dataTable({
         "bLengthChange": false,
         "aaSorting": [[5,'desc']]
     });

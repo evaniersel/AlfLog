@@ -6,6 +6,12 @@ using System.Web.Mvc;
 using AlfrescoWorklog.Models;
 using System.Data;
 using System.Web.Security;
+using System.Text;
+using System.Xml.Linq;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml;
+using AlfrescoWorklog.Models.ViewModels;
 
 namespace AlfrescoWorklog.Controllers
 {
@@ -30,15 +36,27 @@ namespace AlfrescoWorklog.Controllers
         [Authorize]
         public ActionResult ProjectSummary()
         {
-            var projects = db.Projects.ToList();
+            var completed_projects = db.Projects.Where(p => p.isDeployed == true).ToList();
+            var running_projects = db.Projects.Where(p => p.isDeployed == false).ToList();
 
-            foreach (Project p in projects)
+            foreach (Project p in completed_projects)
             {
                 p.TestValidity(db.Projects);
             }
 
-            projects.Reverse();
-            return View(projects);
+            foreach (Project p in running_projects)
+            {
+                p.TestValidity(db.Projects);
+            }
+
+            running_projects.Reverse();
+            completed_projects.Reverse();
+
+            ProjectSummaryViewModel psv = new ProjectSummaryViewModel();
+            psv.CompletedProjects = completed_projects;
+            psv.RunningProjects = running_projects;
+            psv.ErrorMessage = TempData["ErrorMessage"] as string;
+            return View(psv);
         }
 
         [Authorize]
@@ -80,9 +98,16 @@ namespace AlfrescoWorklog.Controllers
         public ActionResult FinishProject(int id)
         {
             var project = db.Projects.Where(p => p.ID == id).Single();
-            project.isDeployed = true;
-            project.endTime = DateTime.Now;
-            db.SaveChanges();
+            var user = db.aspnet_User.Where(u => u.LoweredUserName.Equals(User.Identity.Name.ToLower())).Single();
+            if (project.FinishProject(user))
+            {
+                db.SaveChanges();
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "You are not working on this project so you can't finish it!";
+            }
+           
             return RedirectToAction("ProjectSummary");        
         }
 
@@ -115,13 +140,58 @@ namespace AlfrescoWorklog.Controllers
             var project = db.Projects.Where(p => p.ID == projectID).Single();
             var user = db.aspnet_User.Where(u => u.LoweredUserName.Equals(User.Identity.Name.ToLower())).Single();
 
-            if(!project.aspnet_Users.Contains(user))
+            if (!project.aspnet_Users.Contains(user))
             {
                 project.aspnet_Users.Add(user);
                 db.SaveChanges();
             }
+            else
+            {
+                TempData["ErrorMessage"] = "You are already on this project!";
+            }
 
-            return View("ProjectSummary", db.Projects);
+            return RedirectToAction("ProjectSummary");
+        }
+
+        //Action responsible for clearing all the projects from the datastore.
+        public ActionResult DeleteProjects()
+        {
+            foreach (Project p in db.Projects)
+            {
+                db.Projects.DeleteObject(p);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("ProjectSummary");
+        }
+
+        //ANYTHING UNDER HERE IS IN PROGRESS>>>> NOT IMPLEMENTED PROPERLY
+        public void ProjectsToXML(List<Project> projects)
+        {
+            using (XmlWriter writer = XmlWriter.Create(@"C:\temp\test.xml"))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("Projects");
+                foreach (Project p in projects)
+                {
+                    writer.WriteStartElement("Project");
+                    writer.WriteElementString("ProjectName", p.name.ToString());
+                    writer.WriteElementString("ProjectDescription", p.description.ToString());
+                    writer.WriteElementString("SandpitID", p.sandpitID.ToString());
+                    writer.WriteElementString("AlfrescoUserID", p.userID.ToString());
+
+                    writer.WriteEndElement();
+
+                }
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+        }
+
+
+        private void testing()
+        {
+            ProjectsToXML(db.Projects.ToList());
         }
     }
 }

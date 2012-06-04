@@ -1,7 +1,7 @@
 /*Header Styles*/
 h1{}
-h2{font-size:2em; margin: 2% 0 2% 0;}
-h3{}
+h2{font-size:2em;  margin: 2% 0 2% 0;}
+h3{font-size:1.5em; margin: 2% 0 0 0;}
 
 /*Layout*/
 .container{width:90%; margin:auto; margin-top:20px; margin-bottom:60px;}
@@ -123,6 +123,11 @@ html[xmlns] .dataTables_wrapper {
 /*
  * Table styles
  */
+ table.summary th
+ {
+     font-weight:bolder;
+ }
+ 
 table.summary {
 	width: 100%;
 	clear: both;
@@ -137,12 +142,13 @@ table.summary th {
 /* Header cells */
 table.summary thead th {
 	text-align: center;
+	font-weight: bolder;
 	background: #66a9bd;
 }
 
 /* Body cells */
 table.summary tbody th {
-	text-align: left;
+	text-align: center;
 	background: #91c5d4;
 }
 	

@@ -1,36 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\Users\erikl\Desktop\Worklog Publish 2" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+  <publishProfile publishUrl="C:\Users\erikl\Desktop\Worklog" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="bin/Microsoft.Web.Infrastructure.xml" publishTime="12/20/2010 11:52:36" />
     <file relUrl="Scripts/jquery-1.7.1.min.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Views/Account/Register.cshtml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/MicrosoftAjax.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Views/Account/LogOn.cshtml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Assets/mail.png" publishTime="05/15/2012 17:07:50" />
-    <file relUrl="Views/Worklog/ProjectSummary.cshtml" publishTime="05/18/2012 15:54:55" />
+    <file relUrl="Views/Worklog/ProjectSummary.cshtml" publishTime="06/04/2012 12:34:21" />
     <file relUrl="bin/EntityFramework.xml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="bin/System.Web.Mvc.dll" publishTime="01/05/2011 18:42:16" />
-    <file relUrl="Web.config" publishTime="05/21/2012 11:35:28" />
+    <file relUrl="Web.config" publishTime="06/04/2012 12:41:51" />
+    <file relUrl="Assets/profile.png" publishTime="05/18/2012 16:18:43" />
     <file relUrl="bin/System.Web.WebPages.Deployment.xml" publishTime="12/20/2010 11:52:36" />
-    <file relUrl="Views/Shared/_ShowConflicts.cshtml" publishTime="05/18/2012 13:32:02" />
     <file relUrl="Assets/snail.jpg" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="05/15/2012 17:07:49" />
+    <file relUrl="Scripts/jquery-ui-1.8.11.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Assets/sort_both.png" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Assets/finish.png" publishTime="05/15/2012 17:07:50" />
-    <file relUrl="Global.asax" publishTime="05/15/2012 17:07:50" />
-    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Assets/sort_asc.png" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Assets/snail.png" publishTime="05/15/2012 17:07:50" />
+    <file relUrl="Assets/sort_asc.png" publishTime="05/15/2012 17:07:50" />
     <file relUrl="bin/System.Web.WebPages.dll" publishTime="01/05/2011 16:45:38" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Scripts/jquery-ui-1.8.11.min.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/09/2011 12:26:24" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="05/15/2012 17:07:49" />
+    <file relUrl="Views/Web.config" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/modernizr-1.7.min.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Views/Worklog/SandpitSummary.cshtml" publishTime="05/18/2012 13:04:13" />
+    <file relUrl="Views/Worklog/SandpitSummary.cshtml" publishTime="06/04/2012 10:58:20" />
     <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="01/05/2011 16:45:38" />
-    <file relUrl="Scripts/jquery.validate.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Assets/exit.png" publishTime="05/15/2012 17:07:50" />
     <file relUrl="packages.config" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Assets/sort_desc.png" publishTime="05/15/2012 17:07:50" />
     <file relUrl="bin/System.Web.WebPages.Razor.dll" publishTime="01/05/2011 16:45:38" />
@@ -40,21 +39,22 @@
     <file relUrl="Views/Shared/Error.cshtml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="12/20/2010 11:52:36" />
     <file relUrl="Scripts/jquery.validate.min.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Scripts/Site.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="05/15/2012 17:07:49" />
+    <file relUrl="Scripts/Site.js" publishTime="06/04/2012 11:54:58" />
+    <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Assets/error.jpg" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/jquery-1.5.1.min.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="bin/AlfrescoWorklog.dll" publishTime="05/21/2012 11:44:08" />
+    <file relUrl="bin/AlfrescoWorklog.dll" publishTime="06/04/2012 12:31:09" />
     <file relUrl="Views/Shared/_Layout.cshtml" publishTime="05/18/2012 16:12:37" />
-    <file relUrl="Views/Web.config" publishTime="05/15/2012 17:07:50" />
-    <file relUrl="Content/Site.css" publishTime="05/18/2012 16:16:51" />
-    <file relUrl="Scripts/jquery-ui-1.8.11.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="bin/AlfrescoWorklog.pdb" publishTime="05/21/2012 11:44:08" />
+    <file relUrl="Views/Shared/_ShowConflicts.cshtml" publishTime="06/04/2012 12:34:51" />
+    <file relUrl="Content/Site.css" publishTime="06/04/2012 11:02:07" />
+    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="05/15/2012 17:07:49" />
+    <file relUrl="Assets/exit.png" publishTime="05/15/2012 17:07:50" />
     <file relUrl="bin/EntityFramework.dll" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Views/Worklog/UserProjects.cshtml" publishTime="05/18/2012 15:39:59" />
     <file relUrl="Views/Worklog/CreateProject.cshtml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Views/_ViewStart.cshtml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/modernizr-1.7.js" publishTime="05/15/2012 17:07:49" />
+    <file relUrl="bin/AlfrescoWorklog.pdb" publishTime="06/04/2012 12:31:09" />
     <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Views/Worklog/ShowConflicts.cshtml" publishTime="05/18/2012 13:03:53" />
     <file relUrl="Assets/Add.png" publishTime="05/18/2012 15:48:46" />
@@ -62,10 +62,10 @@
     <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="bin/System.Web.WebPages.xml" publishTime="12/20/2010 00:59:38" />
     <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="05/15/2012 17:07:49" />
-    <file relUrl="Assets/profile.png" publishTime="05/18/2012 16:18:43" />
+    <file relUrl="Scripts/jquery.validate.js" publishTime="05/15/2012 17:07:49" />
     <file relUrl="Views/Account/ChangePassword.cshtml" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="05/15/2012 17:07:49" />
+    <file relUrl="Global.asax" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Assets/Alfresco.jpg" publishTime="05/15/2012 17:07:50" />
     <file relUrl="Assets/alfreslow.jpg" publishTime="05/15/2012 17:07:50" />
     <file relUrl="bin/System.Web.WebPages.Deployment.dll" publishTime="01/05/2011 16:45:38" />

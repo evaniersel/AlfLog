@@ -12,7 +12,7 @@
           <EntitySet Name="aspnetuser_projects" EntityType="AlfrescoWorklogDBModel.Store.aspnetuser_projects" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Projects" EntityType="AlfrescoWorklogDBModel.Store.Projects" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Sandpits" EntityType="AlfrescoWorklogDBModel.Store.Sandpits" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__aspnet_Me__UserI__29221CFB" Association="AlfrescoWorklogDBModel.Store.FK__aspnet_Me__UserI__29221CFB">
+          <AssociationSet Name="FK__aspnet_Me__UserI__02FC7413" Association="AlfrescoWorklogDBModel.Store.FK__aspnet_Me__UserI__02FC7413">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
           </AssociationSet>
@@ -106,8 +106,10 @@
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__aspnet_Me__UserI__29221CFB">
-          <End Role="aspnet_Users" Type="AlfrescoWorklogDBModel.Store.aspnet_Users" Multiplicity="1" />
+        <Association Name="FK__aspnet_Me__UserI__02FC7413">
+          <End Role="aspnet_Users" Type="AlfrescoWorklogDBModel.Store.aspnet_Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="aspnet_Membership" Type="AlfrescoWorklogDBModel.Store.aspnet_Membership" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="aspnet_Users">
@@ -119,7 +121,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_aspnetuser_projects_aspnet_Users">
-          <End Role="aspnet_Users" Type="AlfrescoWorklogDBModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="AlfrescoWorklogDBModel.Store.aspnet_Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="aspnetuser_projects" Type="AlfrescoWorklogDBModel.Store.aspnetuser_projects" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="aspnet_Users">
@@ -131,7 +135,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_aspnetuser_projects_Projects">
-          <End Role="Projects" Type="AlfrescoWorklogDBModel.Store.Projects" Multiplicity="1" />
+          <End Role="Projects" Type="AlfrescoWorklogDBModel.Store.Projects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="aspnetuser_projects" Type="AlfrescoWorklogDBModel.Store.aspnetuser_projects" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Projects">
@@ -143,7 +149,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Project_Sandpit">
-          <End Role="Sandpits" Type="AlfrescoWorklogDBModel.Store.Sandpits" Multiplicity="1" />
+          <End Role="Sandpits" Type="AlfrescoWorklogDBModel.Store.Sandpits" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Projects" Type="AlfrescoWorklogDBModel.Store.Projects" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sandpits">
@@ -155,7 +163,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Project_User">
-          <End Role="AlfrescoUsers" Type="AlfrescoWorklogDBModel.Store.AlfrescoUsers" Multiplicity="1" />
+          <End Role="AlfrescoUsers" Type="AlfrescoWorklogDBModel.Store.AlfrescoUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Projects" Type="AlfrescoWorklogDBModel.Store.Projects" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AlfrescoUsers">
@@ -264,8 +274,10 @@
           <NavigationProperty Name="aspnet_Membership" Relationship="AlfrescoWorklogDBModel.FK__aspnet_Me__UserI__29221CFB" FromRole="aspnet_User" ToRole="aspnet_Membership" />
         </EntityType>
         <Association Name="aspnetuser_projects">
-          <End Type="AlfrescoWorklogDBModel.aspnet_User" Role="aspnet_Users" Multiplicity="*" />
-          <End Type="AlfrescoWorklogDBModel.Project" Role="Project" Multiplicity="*" />
+          <End Type="AlfrescoWorklogDBModel.aspnet_User" Role="aspnet_Users" Multiplicity="*" >
+          </End>
+          <End Type="AlfrescoWorklogDBModel.Project" Role="Project" Multiplicity="*" >
+          </End>
         </Association>
         <EntityType Name="aspnet_Membership">
           <Key>

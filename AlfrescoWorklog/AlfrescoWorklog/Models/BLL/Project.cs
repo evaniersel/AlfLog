@@ -84,12 +84,25 @@ namespace AlfrescoWorklog.Models
                     }
 
                     //If this project in undeployed then any projects started in this user should be instantly conflicting.
-                    if (this.startTime == this.endTime && (p.startTime>= this.startTime|| p.startTime==p.endTime))
+                    if (this.startTime == this.endTime && (p.startTime>= this.startTime || p.startTime==p.endTime))
                     {
                         _ConflictingProjects.Add(p);
                     }
                 }
             }
+        }
+
+        internal bool FinishProject(aspnet_User u)
+        {
+            bool finished = false;
+
+            if (aspnet_Users.Contains(u))
+            {
+                this.isDeployed = true;
+                this.endTime = DateTime.Now;
+                finished = true;
+            }
+            return finished;
         }
         #endregion
     }

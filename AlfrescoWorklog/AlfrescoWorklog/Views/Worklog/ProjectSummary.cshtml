@@ -1,6 +1,6 @@
 ﻿@using AlfrescoWorklog.Models;
 @using AlfrescoWorklog.HtmlHelpers;
-@model IEnumerable<Project>
+@model AlfrescoWorklog.Models.ViewModels.ProjectSummaryViewModel
 @{
     ViewBag.Title = "Project Summary";
     
@@ -8,8 +8,10 @@
 
 <h2>Project Summary</h2>
 
+<h3>Running Projects</h3>
 <div>
-    <table id="project-summary" class="summary">
+    <div id="error-summary" class="error">@if(!String.IsNullOrEmpty(Model.ErrorMessage)){<span>@Model.ErrorMessage</span>}</div>
+    <table class="summary">
         <thead>
             <tr>
                 <th>Name</th>
@@ -26,7 +28,7 @@
 
         <tbody>
 
-        @foreach (Project p in Model)
+        @foreach (Project p in Model.RunningProjects)
         {
             <tr>
                 <td>@p.name</td>
@@ -46,6 +48,56 @@
                     <td>@p.endTime</td>
                 }
 
+                <td>   
+                @if (p.IsConflicted)
+                {
+                    
+                    @Html.Raw(Ajax.ImageActionLink("../../Assets/error.png", "Conflict", "ShowConflicts", new { id = p.ID }, new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "results-container",
+                        HttpMethod = "GET"
+                    }))
+                    
+                } 
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div class="table-controls"></div>
+</div>
+
+
+<h3>Completed Projects</h3>
+<div>
+    <table class="summary">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Project Description</th>
+                <th>Alfresco Username</th>
+                <th>Windows Login</th>
+                <th>Sandpit</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Conflicts</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (Project p in Model.CompletedProjects)
+        {
+            <tr>
+                <td>@p.name</td>
+                <td>@p.description</td>
+                <td>@p.AlfrescoUser.name</td>
+                <td>@p.WindowsUsers</td>
+                <td>@p.Sandpit.name</td>
+                <td>@p.startTime</td>
+                <td>@p.endTime</td>
+       
                 <td>   
                 @if (p.IsConflicted)
                 {

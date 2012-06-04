@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Models\BLL\aspnet_User.cs" />
     <Compile Include="Models\BLL\Project.cs" />
+    <Compile Include="Models\ViewModels\ProjectSummaryViewModel.cs" />
     <Compile Include="Models\ViewModels\ProjectViewModel.cs" />
     <Compile Include="Models\BLL\Sandpit.cs" />
     <Compile Include="Models\ViewModels\SandpitViewModel.cs" />
@@ -187,7 +188,7 @@
     <Content Include="Views\Worklog\UserProjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <Folder Include="Backups\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
